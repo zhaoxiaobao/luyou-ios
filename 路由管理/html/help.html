@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" class="hl-zh-cn logged-in ">
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <style type="text/css">
+            
+            body, input, select, textarea {
+                font-family: Arial,Helvetica,sans-serif;
+            }
+        body {
+            color: #333333;
+            line-height: 20px;
+            margin: 0;
+        }
+        .root {
+            height: auto;
+            min-width: 90%;
+            padding: 5%;
+            width: 90%;
+        }
+        h1:first-child, h2:first-child {
+            margin-top: 0;
+        }
+        h1 {
+            font-size: 27px;
+            line-height: normal;
+        }
+        h1, h2, h3 {
+            color: #363636;
+        }
+        h1 {
+            margin: 40px 0 20px -1px;
+        }
+        h1, h2, h3, h4, h5, h6, th {
+            font-weight: bold;
+        }
+        pre {
+            margin: 15px 0 25px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        pre, code, kbd, samp {
+            font-family: monospace,serif;
+            font-size: 1em;
+        }
+        pre code {
+            background: none repeat scroll 0 0 #FAFAFA;
+            border: 1px solid #DDDDDD;
+            display: block;
+            overflow: auto;
+            padding: 4px 14px 14px 19px;
+        }
+        code {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 15px;
+        }
+        code {
+            font-family: Monaco,Consolas,"Lucida Console",monospace;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <div class="root">
+            <h1 id="libraries-we-use">常见问题解答</h1>
+            <h3>故障1：局域内有一部分计算机能上网。</h3>
+            <div class="codehilite"><pre><code>
+                故障现象：局域网内只有一部分计算机能上网，另一部分不能上网。
+                
+                故障原因：由于局域网内有一部分计算机可以上网，所以基本判定路由器硬件没问题。如果计算机确实没有问题，但却不能连接进入互联网，这是因为ISP限制了局域网内计算机接入互联网的用户数。限制方法是在认证服务器上对部分计算机的MAC地址进行绑定，没有绑定的用户就不能正常上网了。
+                
+                解决方法：用一根网线将已绑定MAC地址的计算机与路由器的LAN端口相连，注意这时路由器先不要连接Modem的连线;再利用路由器的MAC地址克隆功能，将网卡的MAC地址绑定到宽带路由器中，具体方法参见知识补充;最后，查看未被绑定的计算机MAC地址并绑定。单击“开始/运行”，输入“cmd/k ipconfig /all”，其中“Physical Address”是本机的MAC地址。
+            </code></pre></div>
+            <h3>故障2：无法拨号上网。</h3>
+            <div class="codehilite"><pre><code>
+                故障现象：不能通过正常的拨号进入互联网。
+                
+                故障原因：路由器的地址设置有误。
+                
+                解决方法：启动IE浏览器，在地址栏中输入“192.168.1.1”，系统会提示要求输入登录用户名和密码，登录进入路由器管理界面后，找到“连接类型”，重新设置拨号用户名和密码即可。
+                
+                小提示：如果是有线通的宽带，在更换路由器连接的计算机时，要将路由器先断电后再重新连接。
+            </code></pre></div>
+            <h3>故障3：不能进入路由器设置界面。</h3>
+            <div class="codehilite"><pre><code>
+                故障现象：在IE浏览器地址中输入路由器管理界面地址，在弹出的对话框中输入说明书中默认的登录用户名和密码，但却提示出错，无法进入管理界面。
+                
+                故障原因：可能是路由器硬件连接有错。
+                
+                解决方法：按照以下顺序检查路由器的连接，检查路由器与计算机的连接是否正确，路由器上LAN口上的指示灯显示是否正常。如果能确认硬件连接都是正确的，且路由器也是好的，那么可以启动IE浏览器，单击“工具/Internet选项”，选中“从不进行拨号连接”，单击“局域网设置”按钮，取消所有曾被选中的选项。
+            </code></pre></div>
+            <h3>故障4：网页打不开。</h3>
+            <div class="codehilite"><pre><code>
+                故障现象：能正常登录QQ，但无法打开网页。
+                
+                故障原因：一般情况下，能登录QQ说明网络连接没有问题，但无法打开网页，则说明可能是计算机中的DNS解析有问题。
+                
+                解决方法：手动设置计算机上网卡对应TCP/IP地址中的DNS服务器地址(见前二、单机设置)，和路由器设置中的DNS服务器地址。手机设置路由器管理界面的DNS服务器方法：登录路由器管理界面以后，单击“网络参数/WAN口参数”，在其下手动设置，有的路由器设置在“DHCP服务”选项下设置DNS服务器地址。
+                
+            </code></pre></div>
+        </div> <!-- .root -->
+        
+    </body>
+</html>
